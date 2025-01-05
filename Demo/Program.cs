@@ -1,4 +1,6 @@
-﻿namespace Demo
+﻿using Demo.CastingOperatorOverloading;
+
+namespace Demo
 {
     internal class Program
     {
@@ -19,14 +21,29 @@
             #endregion
 
             #region Casting Operators Overloading 
-            object obj = 4;
-            int y = (int)obj; // Explicit Casting
-            Complex complex = new Complex() { real = 10, imag = 20 };
-            int X = (int)complex;
-            Console.WriteLine(X);
+            //object obj = 4;
+            //int y = (int)obj; // Explicit Casting
+            //Complex complex = new Complex() { real = 10, imag = 20 };
+            //int X = (int)complex;
+            //Console.WriteLine(X);
 
-            string s = complex;
-            Console.WriteLine(s);
+            //string s = complex;
+            //Console.WriteLine(s);
+            #endregion
+
+            #region Casting Operatpor Overloading - Mapping
+            User user = new User()
+            {
+                FullName = "Mostafa Habib",
+                Email = "Mostafa7abib@gmail.com",
+                Password = "saasaa",
+                SecurityStamp = Guid.NewGuid(),
+                Id = 4
+            };
+            USerViewModel userViewModel = (USerViewModel)user;
+            Console.WriteLine(userViewModel.FirstName);
+            Console.WriteLine(userViewModel.LastName);
+            Console.WriteLine(userViewModel.Email);
             #endregion
         }
     }
