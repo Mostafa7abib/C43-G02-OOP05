@@ -1,4 +1,5 @@
-﻿using Demo.CastingOperatorOverloading;
+﻿using Demo.Abstraction;
+using Demo.CastingOperatorOverloading;
 
 namespace Demo
 {
@@ -32,19 +33,38 @@ namespace Demo
             #endregion
 
             #region Casting Operatpor Overloading - Mapping
-            User user = new User()
-            {
-                FullName = "Mostafa Habib",
-                Email = "Mostafa7abib@gmail.com",
-                Password = "saasaa",
-                SecurityStamp = Guid.NewGuid(),
-                Id = 4
-            };
-            USerViewModel userViewModel = (USerViewModel)user;
-            Console.WriteLine(userViewModel.FirstName);
-            Console.WriteLine(userViewModel.LastName);
-            Console.WriteLine(userViewModel.Email);
+            //User user = new User()
+            //{
+            //    FullName = "Mostafa Habib",
+            //    Email = "Mostafa7abib@gmail.com",
+            //    Password = "saasaa",
+            //    SecurityStamp = Guid.NewGuid(),
+            //    Id = 4
+            //};
+            //USerViewModel userViewModel = (USerViewModel)user;
+            //Console.WriteLine(userViewModel.FirstName);
+            //Console.WriteLine(userViewModel.LastName);
+            //Console.WriteLine(userViewModel.Email);
             #endregion
+
+            #region Abstraction
+            Shape shape = new Shape();  // invalid
+            shape.CalcArea();
+            Rectangle rectangle = new Rectangle(10, 20);
+            rectangle.Dim1 = 10;
+            rectangle.Dim2 = 21;
+            Console.WriteLine(rectangle.CalcArea());
+            Console.WriteLine(rectangle.Premiter);
+
+            Square square = new Square(3);
+            Console.WriteLine(square.Premiter);
+            Console.WriteLine(square.CalcArea());
+
+            Circle circle = new Circle(4.57m);
+            Console.WriteLine(circle.CalcArea());
+            Console.WriteLine(circle.Premiter);
+            #endregion
+
         }
     }
 }
