@@ -1,5 +1,6 @@
 ﻿using Demo.Abstraction;
 using Demo.CastingOperatorOverloading;
+using Demo.Static;
 
 namespace Demo
 {
@@ -48,23 +49,32 @@ namespace Demo
             #endregion
 
             #region Abstraction
-            Shape shape = new Shape();  // invalid
-            shape.CalcArea();
-            Rectangle rectangle = new Rectangle(10, 20);
-            rectangle.Dim1 = 10;
-            rectangle.Dim2 = 21;
-            Console.WriteLine(rectangle.CalcArea());
-            Console.WriteLine(rectangle.Premiter);
+            //Shape shape = new Shape();  // invalid
+            //shape.CalcArea();
+            //Rectangle rectangle = new Rectangle(10, 20);
+            //rectangle.Dim1 = 10;
+            //rectangle.Dim2 = 21;
+            //Console.WriteLine(rectangle.CalcArea());
+            //Console.WriteLine(rectangle.Premiter);
 
-            Square square = new Square(3);
-            Console.WriteLine(square.Premiter);
-            Console.WriteLine(square.CalcArea());
+            //Square square = new Square(3);
+            //Console.WriteLine(square.Premiter);
+            //Console.WriteLine(square.CalcArea());
 
-            Circle circle = new Circle(4.57m);
-            Console.WriteLine(circle.CalcArea());
-            Console.WriteLine(circle.Premiter);
+            //Circle circle = new Circle(4.57m);
+            //Console.WriteLine(circle.CalcArea());
+            //Console.WriteLine(circle.Premiter);
             #endregion
 
+            #region Static
+            Utility U1 = new Utility() { X = 10, Y = 20 };
+            Utility U2 = new Utility() { X = 30, Y = 40 };
+            Console.WriteLine(U1.ToString());
+            Console.WriteLine(Utility.CmInch(20));   // Class Member Method {Static}
+            Console.WriteLine(Utility.CmInch(20));  // Class Member Method {Static}
+            //Console.WriteLine(U1.AreaCircle(10));   // Object Member Method {Non Static}
+            Console.WriteLine(Utility.AreaCircle(10));
+            #endregion
         }
     }
 }
